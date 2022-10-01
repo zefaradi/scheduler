@@ -6,8 +6,6 @@ import Empty from "./Empty"
 
 export default function Appointment(props) {
 
-  console.log(props.interview);
-
   return (
     <Fragment>
     <article className="appointment">
