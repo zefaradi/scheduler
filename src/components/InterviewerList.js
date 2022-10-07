@@ -1,5 +1,4 @@
 import React from "react";
-import { useState } from "react";
 import './InterviewerList.scss';
 import InterviewerListItem from "./InterviewerListItem";
 
