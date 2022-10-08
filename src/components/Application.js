@@ -10,14 +10,20 @@ import {
 import useApplicationData from 'hooks/useApplicationData';
 
 export default function Application(props) {
+
+  // Custom Hook
   const { state, setDay, bookInterview, cancelInterview } =
     useApplicationData();
 
+  // Appointments and Interviewers Data
   const appointments = getAppointmentsForDay(state, state.day);
   const interviewersArray = getInterviewersForDay(state, state.day);
 
+  // Data for appointment
   const schedule = appointments.map((appointment) => {
     const interview = getInterview(state, appointment.interview);
+
+    // console.log("interview:", interview);
 
     return (
       <Appointment

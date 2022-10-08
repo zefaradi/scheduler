@@ -5,6 +5,7 @@ import "components/Button.scss";
 
 export default function Button(props) {
 
+  // Change the button class based on props received
   const buttonClass = classNames("button",{" button--confirm":props.confirm}, {" button--danger":props.danger})
 
   return (
