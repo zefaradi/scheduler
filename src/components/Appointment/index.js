@@ -52,7 +52,7 @@ export default function Appointment(props) {
 
   return (
     <Fragment>
-      <article className="appointment">
+      <article className="appointment" data-testid="appointment">
         <Header time={props.time} />
         {mode === EMPTY && <Empty onAdd={() => transition(CREATE)} />}
         {mode === SHOW && props.interview && (
@@ -80,7 +80,7 @@ export default function Appointment(props) {
             onCancel={() => back()}
           />
         )}
-        {mode === SAVING && <Status>Saving...</Status>}
+        {mode === SAVING && <Status message="Saving..."/>}
         {mode === CONFIRM && (
           <Confirm
             message="Cancel this appointmnet?"
@@ -88,7 +88,7 @@ export default function Appointment(props) {
             onConfirm={onDelete}
           />
         )}
-        {mode === DELETING && <Status>Deleting</Status>}
+        {mode === DELETING && <Status message="Deleting..."/>}
         {mode === ERROR_DELETE && (
           <Error message = "Could not delete appointment" onClose={() => back()}/>
         )}
